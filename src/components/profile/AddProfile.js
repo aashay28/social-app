@@ -1,5 +1,5 @@
 import Modal from '../UI/Modal';
-import { Button, Form, Container } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import { useState, useEffect, useContext } from 'react';
 import classes from './AddProfile.module.css';
 import AuthContext from '../../store/AuthContext';

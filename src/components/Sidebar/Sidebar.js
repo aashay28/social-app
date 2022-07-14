@@ -5,7 +5,7 @@ import TotalPost from '../Post/TotalPost';
 import Avatar from '@mui/material/Avatar';
 import { Link } from 'react-router-dom';
 import UserContext from '../../store/UserContext';
-import { isOnline } from '../../components/IsOnline';
+import { isOnline } from '../IsOnline';
 import { logoutApi } from '../../Api/Api';
 const Sidebar = () => {
   const authCtx = useContext(AuthContext);

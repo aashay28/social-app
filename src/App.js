@@ -6,9 +6,8 @@ import Signup from './pages/Signup';
 import { useContext } from 'react';
 import AuthContext from './store/AuthContext';
 import HomePage from './pages/HomePage';
-import UserPost from './mains/Post/UserPost';
-
-import MessageBox from './mains/Message/MessageBox';
+import UserPost from './components/Post/UserPost';
+import MessageBox from './components/Message/MessageBox';
 
 function App() {
   const authCtx = useContext(AuthContext);
@@ -17,6 +16,16 @@ function App() {
   return (
     <>
       <Routes>
+        <Route
+          path="/"
+          element={
+            !isLoggedIn ? (
+              <Navigate to="/login" />
+            ) : (
+              <Navigate to="/home/feed" />
+            )
+          }
+        />
         {isLoggedIn && (
           <>
             <Route path="/home" element={<HomePage />}>

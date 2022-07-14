@@ -1,5 +1,5 @@
-import Sidebar from '../mains/Sidebar/Sidebar';
-import Header from '../mains/Header/Header';
+import Sidebar from '../components/Sidebar/Sidebar';
+import Header from '../components/Header/Header';
 import { useEffect, useContext } from 'react';
 import { Grid } from '@material-ui/core';
 import AuthContext from '../store/AuthContext';

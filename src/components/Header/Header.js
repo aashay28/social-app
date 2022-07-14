@@ -7,8 +7,26 @@ import {
   disable as disableDarkMode,
   isEnabled as isDarkReaderEnabled,
 } from 'darkreader';
+import { searchUserApi } from '../../Api/Api';
+import AuthContext from '../../store/AuthContext';
+import { useContext } from 'react';
+
 const Header = () => {
   const [profileShow, setProfileShow] = useState(false);
+  const [showSearchData, setShowSearchData] = useState(false);
+
+  const [searchData, setSearchData] = useState([]);
+  const authCtx = useContext(AuthContext);
+  const searchUser = async e => {
+    const data = await searchUserApi(authCtx.token, e.target.value);
+    if (e.target.value.length > 0) {
+      setSearchData(data.data);
+      setShowSearchData(true);
+    } else {
+      setSearchData('');
+      setShowSearchData(false);
+    }
+  };
 
   const showProfileHandler = () => {
     setProfileShow(true);
@@ -66,6 +84,7 @@ const Header = () => {
                         </svg>
                         <input
                           type="text"
+                          onChange={e => searchUser(e)}
                           className="block w-full py-1.5 pl-10 pr-4 leading-normal rounded-2xl focus:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 ring-opacity-90 bg-gray-100  text-gray-400 aa-input"
                           placeholder="Search"
                         />
@@ -107,6 +126,23 @@ const Header = () => {
                       </div>
                     </div>
                   </div>
+                  <div>
+                    {showSearchData && (
+                      <div className="absolute ml-20 z-20 w-56 py-2 mt-3 overflow-hidden bg-white rounded-md shadow-xl ">
+                        {searchData &&
+                          searchData.map((user, i) => {
+                            return (
+                              <div
+                                key={i}
+                                className="block px-4 py-3 text-sm text-gray-900 capitalize transition-colors duration-200 transform  hover:bg-gray-800 hover:text-gray-200  "
+                              >
+                                {user.name}
+                              </div>
+                            );
+                          })}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -147,25 +183,6 @@ const Header = () => {
           </div>
         </nav>
       </div>
-
-      {/* <div className={classes.appHeader}>
-        <Row className={classes.appItems}>
-          <Col sm={2}>
-            <NavLink>ReactApp</NavLink>
-          </Col>
-          <Col sm={4}>
-            <NavLink>Search</NavLink>
-          </Col>
-          <Col sm={2}>
-            <NavLink onClick={showProfileHandler}>Profile</NavLink>
-            {profileShow && <AddProfile onClose={hideProfileHandler} />}
-          </Col>
-          <Col sm={2}>
-            <NavLink onClick={showPostHandler}>Post</NavLink>
-            {postShow && <AddPost onClose={hidePostHandler} />}
-          </Col>
-        </Row>
-      </div> */}
     </>
   );
 };

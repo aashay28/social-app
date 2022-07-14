@@ -1,6 +1,6 @@
 // import classes from './User.module.css';
 import React from 'react';
-import { socket } from '../../components/Socket';
+import { socket } from '../Socket';
 // import { useNavigate } from 'react-router-dom';
 // import CheckCircleTwoToneIcon from '@mui/icons-material/CheckCircleTwoTone';
 import { useEffect, useContext } from 'react';

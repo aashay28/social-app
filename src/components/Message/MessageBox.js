@@ -6,8 +6,7 @@ import UserContext from '../../store/UserContext';
 
 import { useContext } from 'react';
 import { Grid } from '@mui/material';
-import User from '../Chat/User';
-
+import User from '../../components/Users/User';
 const MessageBox = () => {
   const userCtx = useContext(UserContext);
 

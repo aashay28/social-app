@@ -1,4 +1,4 @@
-import Post from '../mains/Post/Post';
+import Post from '../components/Post/Post';
 
 const Feed = () => {
   return <Post />;

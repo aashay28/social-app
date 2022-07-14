@@ -53,6 +53,17 @@ export const getMsgApi = async (values, token) => {
     body: JSON.stringify(values),
   }).then(data => data.json());
 };
+export const getMsgPostApi = async (token, values) => {
+  return fetch('http://192.168.1.241:8000/api/message/getmsg', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(values),
+  }).then(data => data.json());
+};
 //------------------------------------------------------------------------------------------------
 //GET API
 //------------------------------------------------------------------------------------------------
@@ -96,15 +107,14 @@ export const getAllUserApi = async token => {
     body: JSON.stringify(),
   }).then(data => data.json());
 };
-export const getMsgPostApi = async (token, values) => {
-  return fetch('http://192.168.1.241:8000/api/message/getmsg', {
-    method: 'POST',
+export const searchUserApi = async (token, value) => {
+  return fetch(` http://192.168.1.241:8000/api/getallUser?search=${value}`, {
+    method: 'GET',
     headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+      'Content-type': 'application/json',
+      Authorization: `Bearer ${token}`, // notice the Bearer before your token
     },
-    body: JSON.stringify(values),
+    body: JSON.stringify(),
   }).then(data => data.json());
 };
 
