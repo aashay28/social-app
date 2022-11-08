@@ -1,0 +1,8 @@
+.profileHead img {
+  max-height: 12rem;
+  max-width: 12rem;
+  border-radius: 100%;
+}
+.profileHead {
+  text-align: center;
+}
