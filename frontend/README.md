@@ -2,28 +2,28 @@
 
 <div align="center">
     <h3>Login Page</h3>
-    <img src="/screenshot/1-login.png" width="600px"></img> 
+    <img src="/frontend/screenshot/1-login.png" width="600px"></img> 
     </br>
     <h3>Signup Page</h3>
-    <img src="/screenshot/2-signup.png" width="600px"></img> 
+    <img src="/frontend/screenshot/2-signup.png" width="600px"></img> 
     </br>
     <h3>Feed Page</h3>
-    <img src="/screenshot/3-feed.png" width="600px"></img> 
+    <img src="/frontend/screenshot/3-feed.png" width="600px"></img> 
     </br>
     <h3>Add Post</h3>
-    <img src="/screenshot/4-add-post.png" width="600px"></img> 
+    <img src="/frontend/screenshot/4-add-post.png" width="600px"></img> 
     </br>
     <h3>Personal Post</h3>
-    <img src="/screenshot/5-personal-post.png" width="600px"></img> 
+    <img src="/frontend/screenshot/5-personal-post.png" width="600px"></img> 
     </br>
     <h3>Chat</h3>
-    <img src="/screenshot/6-chat.png" width="600px"></img> 
+    <img src="/frontend/screenshot/6-chat.png" width="600px"></img> 
     </br>
     <h3>Profile</h3>
-    <img src="/screenshot/7-profile.png" width="600px"></img> 
+    <img src="/frontend/screenshot/7-profile.png" width="600px"></img> 
     </br>
     <h3>Black Theme</h3>
-    <img src="/screenshot/8-black-theme.png" width="600px"></img> 
+    <img src="/frontend/screenshot/8-black-theme.png" width="600px"></img> 
     </br>
     </br>
 </div>
